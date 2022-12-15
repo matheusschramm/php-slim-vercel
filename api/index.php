@@ -27,16 +27,16 @@ $app->get('/', function (Request $request, Response $response, array $args) {
 
 $app->get('/testbot/{message}', function (Request $request, Response $response, array $args) {
   
-    $mensageInformada = $args['message'];
+    $mensageInformada = $args['mensagem'];
 
     if (isset($mensageInformada)){
-        $mensageInformada = " Mensagem: " . $mensageInformada;
+        $mensageInformada = "Mensagem:" . $mensageInformada;
     }
 
     
     require_once ("controllers/ControllerApiTelegram.php");
     
-    ControllerApiTelegram::sendMessage("Testando ChatBot de Carlos");
+    ControllerApiTelegram::sendMessage("Testando ChatBot de Carlos" . $mensageInformada);
     
     $response->getBody()->write("Enviando mensagem para o chatbot!");
 
