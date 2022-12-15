@@ -40,7 +40,7 @@ $app->get('/testbot/{message}', function (Request $request, Response $response, 
     
     $response->getBody()->write("Enviando mensagem para o chatbot!");
 
-return $response;
+    return $response;
 
 });
 
