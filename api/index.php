@@ -27,10 +27,11 @@ $app->get('/', function (Request $request, Response $response, array $args) {
 
 $app->get('/testbot/{message}', function (Request $request, Response $response, array $args) {
   
-    $mensageInformada = $args['message'];
+    $message = $args['message'];
 
+    $mensageInformada = "SEM MENSAGEM";
     if (isset($mensageInformada)){
-        $mensageInformada = "Mensagem:" . $mensageInformada;
+        $mensageInformada = "Mensagem:" . $$message;
     }
 
     
